@@ -1,0 +1,26 @@
+{% include "header.html" %}
+<body class="d-flex align-items-center justify-content-center flex-column">
+    <h2>{%block title%} {%endblock %}</h2>
+     <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="{% block form_action %}{% endblock %}" method="POST" class="text-center">
+                    <div class="mb-3">
+                        <input type="text" 
+                               class="form-control" 
+                               id="input_text" 
+                               name="input_text" 
+                               placeholder="{% block placeholder %}{% endblock %}"
+                               pattern="{% block pattern %}{% endblock %}"
+                               title="{% block validation_message %}{% endblock %}"
+                               required>
+                    </div>
+                    <button type="submit" class="btn {% block button_class %}{% endblock %}">Convert</button>
+                </form>
+                {% block result %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <a href="{{ url_for('home') }}" class="btn btn-secondary mt-4">Back to Home</a>
+
+{% include "footer.html" %}
