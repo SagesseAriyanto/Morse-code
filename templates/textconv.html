@@ -11,3 +11,15 @@
 {% block validation_message %}Please enter only letters, numbers, spaces, and basic punctuation{% endblock %}
 
 {% block button_class %}btn-info{% endblock %}
+
+{% block result %}
+{% if result %}
+<div class="alert alert-info mt-4 border-3"
+    style="border-color: #0dcaf0 !important; background-color: rgba(13, 202, 240, 0.1);">
+    <h4 class="text-info mb-3">
+        <i class="fas fa-dot-circle me-2"></i>Morse Code:
+    </h4>
+    <p class="fs-4 text-break fw-bold text-info">{{ result }}</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -11,3 +11,15 @@
 {% block validation_message %}Please enter only dots (·), dashes (−), spaces, and forward slashes (/){% endblock %}
 
 {% block button_class %}btn-warning{% endblock %}
+
+{% block result %}
+{% if result %}
+<div class="alert alert-warning mt-4 border-3"
+    style="border-color: #ffc107 !important; background-color: rgba(255, 193, 7, 0.1);">
+    <h4 class="text-warning mb-3">
+        <i class="fas fa-comments me-2"></i>Decoded Text:
+    </h4>
+    <p class="fs-4 text-break fw-bold text-warning">{{ result }}</p>
+</div>
+{% endif %}
+{% endblock %}
